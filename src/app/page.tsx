@@ -3,16 +3,17 @@ import Image from "next/image";
 import { GoArrowRight } from "react-icons/go";
 import { LuMapPin, LuMail, LuPhone } from "react-icons/lu";
 import MenuMobile from "./components/layout/mobile_menu";
+import Button from "./components/atoms/Button";
 
 export default function Home() {
   return (
     <main>
-      <header className="fixed inset-0 container bg-dark mx-auto flex items-center justify-between h-[102px] pt-[50px] z-10">
+      <header className="bg-dark fixed inset-0 z-10 container mx-auto flex h-[102px] items-center justify-between pt-[50px]">
         <div className="flex items-center gap-2.5">
-          <div className="relative mx-auto lg:w-[102px] lg:h-[102px] md:w-14 md:h-14">
+          <div className="relative mx-auto h-[69px] w-[69px] lg:h-[102px] lg:w-[102px]">
             <Image src="/logo.png" alt="Logo App" fill />
           </div>
-          <div className="relative mx-auto w-[76px] h-[46px]">
+          <div className="relative mx-auto h-7 w-[46px] lg:h-[46px] lg:w-[76px]">
             <Image src="/logo_text.png" alt="Logo Text" fill />
           </div>
         </div>
@@ -28,26 +29,26 @@ export default function Home() {
         </nav>
 
         {/* Button Group */}
-        <div className="hidden lg:flex items-center gap-[38px]">
-          <button className="btn btn-light">Contact Us</button>
-          <button className="btn btn-primary">Join Hydra</button>
+        <div className="hidden items-center gap-[38px] lg:flex">
+          <Button className="btn btn-light">Contact Us</Button>
+          <Button className="btn btn-primary">Join Hydra</Button>
         </div>
 
         <MenuMobile />
       </header>
 
-      <section className="container mx-auto pt-[100px] h-screen flex flex-col justify-center gap-24">
-        <div className="lg:flex md:block items-center justify-between">
-          <div className="flex flex-col max-w-[450px]">
+      <section className="container mx-auto flex h-screen flex-col justify-center gap-24 pt-[100px]">
+        <div className="flex items-center justify-between sm:flex-col-reverse lg:flex-row">
+          <div className="flex max-w-[450px] flex-col">
             <h1 className="text-[40px] font-bold">
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-base">
+              <span className="from-primary to-base bg-linear-to-r bg-clip-text text-[46px] text-transparent">
                 Dive
               </span>{" "}
               Into The Depths
             </h1>
             <h2 className="text-[40px] font-bold">
               Of{" "}
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-base to-primary">
+              <span className="from-base to-primary bg-linear-to-r bg-clip-text text-[46px] text-transparent">
                 Virtual Reality
               </span>
             </h2>
@@ -64,7 +65,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="relative w-[490px] h-[426px]">
+          <div className="relative h-[426px] w-[490px]">
             {/* GARIS */}
             {/* <div className="fixed top-1/2 left-1/2 -z-10">
               <div
@@ -81,15 +82,7 @@ export default function Home() {
             </div> */}
 
             {/* FRAME GAMBAR — ini yang punya shape dan overflow */}
-            <div
-              className="
-      absolute inset-0
-      rounded-t-[100px] rounded-br-[100px] rounded-bl-[240px]
-      border-17 border-[#00000013]
-      overflow-hidden
-      z-20
-    "
-            >
+            <div className="absolute inset-0 z-20 overflow-hidden rounded-t-[100px] rounded-br-[100px] rounded-bl-[240px] border-17 border-[#00000013]">
               <Image
                 src="/vr.png"
                 alt="Hydra Virtual Reality"
@@ -99,7 +92,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex justify-around py-[58px] px-[50px] rounded-full bg-radial from-[#3A3456] from-0% to-[#211E2E] to-95% shadow-lg">
+        <div className="flex justify-around rounded-full bg-radial from-[#3A3456] from-0% to-[#211E2E] to-95% px-[50px] py-[58px] shadow-lg">
           <div className="flex items-center justify-center gap-5">
             <LuMapPin className="text-primary text-5xl" />
             <div className="flex flex-col">
@@ -109,7 +102,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-5 px-12 border-x border-primary/40">
+          <div className="border-primary/40 flex items-center justify-center gap-5 border-x px-12">
             <LuPhone className="text-primary text-5xl" />
             <div className="flex flex-col">
               <h3 className="text-[24px] font-bold">Give Us a Call</h3>
